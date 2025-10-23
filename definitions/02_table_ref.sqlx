@@ -1,0 +1,15 @@
+-- Using ${ref()} to dynamically use data sources
+
+config {
+    type: "table"
+}
+
+SELECT *, 
+    CASE
+        WHEN value > 800000 THEN "platinum"
+        WHEN value > 600000 THEN "gold"
+        WHEN value > 300000 THEN "silver"
+    ELSE
+        "bronze"
+    END AS segment
+FROM ${ref("customer_data")} -- <== Use references for more flexibility

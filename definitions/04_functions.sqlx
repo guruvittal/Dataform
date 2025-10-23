@@ -1,0 +1,9 @@
+-- Using a function for more reusable code
+
+config {
+    type: "table"
+}
+
+SELECT *, 
+    ${functions.customerSegment("value")} AS segment -- <== Use reusable functions
+FROM ${ref("customer_data")}

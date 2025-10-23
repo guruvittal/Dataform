@@ -1,0 +1,10 @@
+-- Using vars to influence behaviors during runtime
+
+config {
+    type: "table",
+    tags: ["workflow"]
+}
+
+SELECT *, 
+    ${functions.customerSegment2("value")} AS segment 
+FROM ${ref("customer_data")}

@@ -1,0 +1,15 @@
+-- Using constants for flexibility
+
+config {
+    type: "table"
+}
+
+SELECT *, 
+    CASE
+        WHEN value > ${constants.platinum_threshold} THEN "platinum"
+        WHEN value > ${constants.gold_threshold} THEN "gold"
+        WHEN value > ${constants.silver_threshold} THEN "silver"
+    ELSE
+        "bronze"
+    END AS segment
+FROM ${ref("customer_data")}
