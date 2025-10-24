@@ -1,0 +1,5 @@
+config {
+  type:   "declaration",
+  schema: "dataform",               // BigQuery dataset
+  name:   "customer_data"           // BigQuery table
+}

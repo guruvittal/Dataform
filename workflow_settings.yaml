@@ -1,0 +1,8 @@
+defaultProject: dataquality-474116
+defaultDataset: dataform
+defaultAssertionDataset: dataform_assertions
+dataformCoreVersion: 3.0.26
+vars:
+   platinum_threshold: "800000"
+   gold_threshold:     "600000"
+   silver_threshold:   "300000"
